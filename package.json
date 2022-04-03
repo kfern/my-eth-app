@@ -1,0 +1,22 @@
+{
+  "name": "@kfern/my-eth-app",
+  "version": "0.1.0",
+  "keywords": [
+    "ethereum",
+    "react",
+    "workspaces",
+    "yarn"
+  ],
+  "private": true,
+  "scripts": {
+    "app:build": "yarn workspace @kfern/react-dapp build",
+    "app:eject": "yarn workspace @kfern/react-dapp eject",
+    "app:start": "yarn workspace @kfern/react-dapp start",
+    "app:test": "yarn workspace @kfern/react-dapp test"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  }
+}
