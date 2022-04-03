@@ -1,25 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
 import { store } from "./config/store";
 import { Provider } from "react-redux";
-import * as serviceWorker from "./serviceWorker";
-import { DAppProvider, Config, Mainnet } from "@usedapp/core";
-import { getDefaultProvider } from "ethers";
 
-const config: Config = {
-  readOnlyChainId: Mainnet.chainId,
-  readOnlyUrls: {
-    [Mainnet.chainId]: getDefaultProvider(),
-  },
-};
+import App from "./App";
+import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <DAppProvider config={config}>
-        <App />
-      </DAppProvider>
+      <App />
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")

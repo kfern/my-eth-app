@@ -17,7 +17,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "test:unit": "CI=true react-scripts test --coverage",
+    "test:ci": "CI=true react-scripts test --coverage",
     "eject": "react-scripts eject",
     "prettier": "prettier ./src --write",
     "typechain:generate": "yarn typechain --target=ethers-v5 ./abi/**/*.json --out-dir=./gen/types",
@@ -89,7 +89,8 @@
       "!**/src/index.tsx",
       "!**/src/**/*.svg",
       "!**/src/**/types.ts",
-      "!**/node_modules/**"
+      "!**/node_modules/**",
+      "!**/src/**/*.stories.tsx"
     ]
   }
 }
