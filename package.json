@@ -12,7 +12,8 @@
     "app:build": "yarn workspace @kfern/react-dapp build",
     "app:eject": "yarn workspace @kfern/react-dapp eject",
     "app:start": "yarn workspace @kfern/react-dapp start",
-    "app:test": "yarn workspace @kfern/react-dapp test"
+    "app:test": "yarn workspace @kfern/react-dapp test",
+    "sb": "yarn workspace @kfern/react-dapp storybook"
   },
   "workspaces": {
     "packages": [
