@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { Message, SemanticICONS, Button } from "semantic-ui-react";
-import { connectLang } from "../../lang";
+import lang from "../../lang";
 import { WalletViewProps, NetworkConnectionStatus } from "../../types";
 
 const icons: Record<NetworkConnectionStatus, SemanticICONS> = {
@@ -11,13 +11,13 @@ const icons: Record<NetworkConnectionStatus, SemanticICONS> = {
 
 const getContent = (connectionStatus: NetworkConnectionStatus, onConnect: (connect: boolean) => void) => {
   if (connectionStatus === "connecting") {
-    return <p>{connectLang.en.connecting}</p>;
+    return <p>{lang.en.connecting}</p>;
   } else {
     return (
       <div>
-        <span>{connectLang.en[connectionStatus]}</span>
+        <span>{lang.en[connectionStatus]}</span>
         <Button primary onClick={() => onConnect(connectionStatus === "disconnected")} floated="right">
-          {connectionStatus === "connected" ? connectLang.en.disconnect : connectLang.en.connect}
+          {connectionStatus === "connected" ? lang.en.disconnect : lang.en.connect}
         </Button>
       </div>
     );

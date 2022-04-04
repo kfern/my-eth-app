@@ -1,9 +1,10 @@
-export const connectLang = {
+const lang = {
   en: {
     disconnect: "Disconnect",
     disconnected: "Disconnected",
-    connecting: "Connecting",
+    connecting: "Connecting to Metamask",
     connect: "Connect",
     connected: "Connected",
   },
 };
+export default lang;

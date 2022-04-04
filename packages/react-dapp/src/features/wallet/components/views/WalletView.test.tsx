@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import ConnectView from "./WalletView";
 import { WalletViewProps } from "../../types";
-import { connectLang } from "../../lang";
+import lang from "../../lang";
 import userEvent from "@testing-library/user-event";
 
 describe("Wallet", () => {
@@ -18,10 +18,10 @@ describe("Wallet", () => {
 
     render(<ConnectView {...testProps} />);
 
-    expect(screen.getByText(new RegExp(connectLang.en.disconnected, "im"))).toBeInTheDocument();
+    expect(screen.getByText(new RegExp(lang.en.disconnected, "im"))).toBeInTheDocument();
     expect(screen.queryAllByText(testProps.wallet.data.account).length).toBe(0);
 
-    const button = screen.getByRole("button", { name: connectLang.en.connect });
+    const button = screen.getByRole("button", { name: lang.en.connect });
     userEvent.click(button);
     expect(testProps.onConnect).toHaveBeenCalledTimes(1);
     expect(testProps.onConnect).toBeCalledWith(true);
@@ -40,7 +40,7 @@ describe("Wallet", () => {
 
     render(<ConnectView {...testProps} />);
 
-    expect(screen.getByText(new RegExp(connectLang.en.connecting, "im"))).toBeInTheDocument();
+    expect(screen.getByText(new RegExp(lang.en.connecting, "im"))).toBeInTheDocument();
     expect(screen.queryAllByRole("button").length).toBe(0);
     expect(screen.queryAllByText(testProps.wallet.data.account).length).toBe(0);
     expect(testProps.onConnect).toHaveBeenCalledTimes(0);
@@ -58,10 +58,10 @@ describe("Wallet", () => {
     };
 
     render(<ConnectView {...testProps} />);
-    expect(screen.getByText(new RegExp(connectLang.en.connected, "im"))).toBeInTheDocument();
+    expect(screen.getByText(new RegExp(lang.en.connected, "im"))).toBeInTheDocument();
     expect(screen.queryAllByText(testProps.wallet.data.account).length).toBe(1);
 
-    const button = screen.getByRole("button", { name: connectLang.en.disconnect });
+    const button = screen.getByRole("button", { name: lang.en.disconnect });
     userEvent.click(button);
     expect(testProps.onConnect).toHaveBeenCalledTimes(1);
     expect(testProps.onConnect).toBeCalledWith(false);
